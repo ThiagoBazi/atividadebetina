@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.
+css">
+    <title>Formulario</title>
+</head>
+
+<body>
+
+    <h1>Preencha o Formulario</h1>
+
+    <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Nome</label>
+          <input type="nome" class="form-control" id="Formulario-nome" aria-describedby="emailHelp" placeholder="Seu nome">
+          
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Hobby:</label>
+          <input type="hobby" class="form-control" id="Formulario-Hobby" placeholder="Hobby">
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Rede Social:</label>
+      <input type="redesocial" class="form-control" id="Formulario-Redesocial" placeholder="Rede Social">
+    </div>
+    
+    <div class="form-group">
+        <label for="exampleInputPassword1">Time de futebol:</label>
+        <input type="timedefutebol" class="form-control" id="Formulario-timedefutebol" placeholder="Time de Futebol">
+    </div>
+        
+<button type="button" class="btn btn-primary btn-sm" onclick="informacoes()">Continuar</button>    
+    </form>
+
+<script>
+
+  
+    function informacoes(){
+        const nome= document.getElementById("Formulario-nome").value;
+        const hobby= document.getElementById("Formulario-Hobby").value;
+        const redesocial= document.getElementById("Formulario-Redesocial").value;
+        const timedefutebol= document.getElementById("Formulario-timedefutebol").value;
+
+        const formulario = {nome: nome , hobby: hobby, redesocial: redesocial, timedefutebol:timedefutebol };
+
+        const informacoes = JSON.stringify(formulario);
+        sessionStorage.setItem( formulario);
+        
+        window.location.href = "resultado.html";
+    }
+    </script>
+</body>
+</html>
